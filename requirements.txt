@@ -1,8 +1,10 @@
-transformers
-peft
+```txt
+transformers>=4.30
+peft>=0.5.0
 datasets
-torch
-trl
+torch>=2.0
+trl>=0.7.0
 gradio
 matplotlib
 tensorboard
+```
