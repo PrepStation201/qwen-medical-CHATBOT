@@ -1,0 +1,8 @@
+transformers
+peft
+datasets
+torch
+trl
+gradio
+matplotlib
+tensorboard
