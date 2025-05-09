@@ -1,37 +1,91 @@
 # qwen-medical-CHATBOT
-```markdown
-# 🧠 Qwen Medical Chatbot
 
-This project presents a domain-specific chatbot fine-tuned on healthcare and alternative medicine instructions using Qwen2.5-0.5B-Instruct and LoRA (Low-Rank Adaptation). It leverages efficient fine-tuning and an interactive Gradio interface.
 
-## 🚀 Features
-- Fine-tuned LLM specialized for medical/alternative health Q&A
-- Efficient LoRA-based training (low memory requirement)
-- Gradio UI for live interaction
-- Quantized 4-bit model to support resource-constrained environments
+## 📌 Table of Contents
 
-## 🧰 Technologies Used
-- 🤗 Hugging Face Transformers & TRL (Trainer)
-- 🧪 LoRA (via PEFT)
-- 📊 Matplotlib + TensorBoard (training visualization)
-- 🌐 Gradio (web interface)
+- [Features](#features)
+- [Model Architecture](#model-architecture)
+- [Dataset](#dataset)
+- [Before vs After Fine-Tuning](#before-vs-after-fine-tuning)
+- [Training Visualizations](#training-visualizations)
+- [Running Locally](#running-locally)
+- [Live Demo](#live-demo)
+- [Technologies Used](#technologies-used)
+- [Project Directory Structure](#project-directory-structure)
+- [License](#license)
 
-## 📁 Dataset
-Custom dataset of instruction-response pairs (`nlpsquad_dataset.csv`) containing natural queries related to alternative treatments, Ayurveda, herbal use, and nutritional advice.
+---
+
+## ✅ Features
+
+- 🏥 Fine-tuned on a custom medical instruction-response dataset
+- 🔄 Efficient LoRA training (only ~0.5–1% of parameters trained)
+- 💾 4-bit quantized model for low memory usage
+- 🌐 Gradio-based chatbot for web interaction
+- 📈 Integrated logging with TensorBoard
+- 🧪 Before-vs-after output comparison for evaluation
+
+---
 
 ## 🧠 Model Architecture
-![architecture](architecture.png)
+
+
+![Model Architecture](architecture.png)
+
+- **Base Model**: `Qwen2.5-0.5B-Instruct`
+- **Adaptation**: LoRA via `peft`
+- **Training**: Hugging Face `transformers` + `trl`
+
+---
+
+## 📁 Dataset
+
+The dataset `nlpsquad_dataset.csv` contains approximately 1,600 high-quality instruction-response pairs in the healthcare domain.
+
+Each row contains:
+- `Instruction`: a natural language question (e.g., "What are herbal remedies for anxiety?")
+- `Response`: a short, factual medical explanation
+
+> ✅ Data was formatted as:
+> ```
+> <s>[INST] Instruction [/INST] Response </s>
+> ```
+
+---
 
 ## 🧪 Before vs After Fine-Tuning
-See [comparison_outputs.md](comparison_outputs.md) for sample output comparisons between the base model and fine-tuned version.
 
-## 📊 Visualizations
-- Training Loss over Time (`loss_curve.png`)
-- Learning Rate Schedule (`lr_curve.png`)
-- Input Instruction Length Distribution (`instr_length_hist.png`)
+See [comparison_outputs.md](comparison_outputs.md) for full samples.
 
-## 🛠️ Running the Project Locally
-```bash
-pip install -r requirements.txt
-python app.py
+| Prompt                             | Base Model Output        | Fine-Tuned Output                                       |
+|------------------------------------|--------------------------|---------------------------------------------------------|
+| What are remedies for migraines?   | I don't know.            | Ginger, peppermint oil, magnesium, and riboflavin...   |
+| How does Ayurveda treat insomnia?  | No response.             | Ayurveda recommends ashwagandha and calming herbs...    |
+
+---
+
+## 📊 Training Visualizations
+
+- 📉 Loss Curve  
+  ![Loss Curve](loss_curve.png)
+
+- 📈 Learning Rate Schedule  
+  ![LR Curve](lr_curve.png)
+
+- 📊 Instruction Length Distribution  
+  ![Instruction Length Histogram](instr_length_hist.png)
+
+Logged via TensorBoard and Matplotlib during training.
+
+---
+
+## 💻 Running Locally
+
+> Prerequisite: Python 3.10+ and pip installed
+
+1. Clone this repo:
+   ```bash
+   git clone https://github.com/yourusername/qwen-medical-chatbot.git
+   cd qwen-medical-chatbot
+
 ```
