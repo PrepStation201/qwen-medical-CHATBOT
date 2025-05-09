@@ -1,6 +1,10 @@
 # qwen-medical-CHATBOT
 This project focuses on building a lightweight, domain-specific medical chatbot by fine-tuning the Qwen2.5-0.5B-Instruct language model using LoRA (Low-Rank Adaptation). The training is done on a custom instruction-response dataset based on healthcare and alternative medicine. The model is optimized for memory efficiency using 4-bit quantization and deployed through an interactive Gradio interface. It offers medically relevant, instruction-following responses and is designed for real-time chatbot applications in resource-constrained environments like Google Colab.
 
+## Hugging face spaces
+A fine-tuned chatbot built on top of [Qwen2.5-0.5B-Instruct](https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct) using LoRA (Low-Rank Adaptation), tailored for answering health-related and alternative medicine queries. This project combines lightweight training with real-time chatbot deployment using Gradio.
+
+
 
 ## 📌 Table of Contents
 
