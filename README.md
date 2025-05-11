@@ -56,7 +56,7 @@ CSV Dataset → Prompt Formatting → Tokenization → LoRA Fine-Tuning → Grad
 
 ## 📁 Dataset
 
-This chatbot was trained on a custom-built CSV file named `nlpsquad_dataset.csv`. It contains ~1,600 high-quality instruction-response pairs inspired by reliable sources such as Gale Encyclopedia of Alternative Medicine.
+This chatbot was trained on a custom-built CSV file named `nlpsquad_dataset.csv`. It contains ~1,600 high-quality instruction-response pairs inspired by reliable sources such as [Gale Encyclopedia of Alternative Medicine](https://staibabussalamsula.ac.id/wp-content/uploads/2024/06/The-Gale-Encyclopedia-of-Medicine-3rd-Edition-staibabussalamsula.ac_.id_.pdf)
 
 Each entry includes:
 - `Instruction`: A natural language query (e.g., "What are the symptoms of stress?")
